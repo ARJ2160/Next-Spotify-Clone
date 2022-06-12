@@ -18,21 +18,6 @@ import useSpotify from '../hooks/useSpotify';
 
 const Player = () => {
 
-  const handleKeyPress = useCallback((event: any) => {
-    if (event.keyCode === 32) {
-      handlePlayPause();
-    }
-  }, []);
-
-  useEffect(() => {
-    // attach the event listener
-    document.addEventListener('keydown', handleKeyPress);
-    // remove the event listener
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [handleKeyPress]);
-
   const spotifyApi = useSpotify();
   const { data: session, status } = useSession();
   const [currentIdTrack, setCurrentIdTrack] =
@@ -70,6 +55,12 @@ const Player = () => {
     }, 500),
     []
   );
+  
+  const handleKeyPress = useCallback((event: any) => {
+    if (event.keyCode === 32) {
+      handlePlayPause();
+    }
+  }, []);
 
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentIdTrack) {
@@ -83,6 +74,15 @@ const Player = () => {
       debouncedAdjustVolume(volume);
     }
   }, [volume]);
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener('keydown', handleKeyPress);
+    // remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   return (
     <div className='h-24 bg-gradient-to-b from-black to-gray-900 text-white text-xs md:text-base grid grid-cols-3 px-2 md:px-8'>
