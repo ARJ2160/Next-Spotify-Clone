@@ -21,11 +21,11 @@ class MyDocument extends Document {
           <meta property='og:title' content='Spotify Clone' />
           <meta
             property='og:image'
-            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_185937_OrcKkOKg-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655040613314'
+            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_191653_y8VfSkZqt.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655041634146'
           />
           <meta
             property='og:image:url'
-            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_185937_OrcKkOKg-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655040613314'
+            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_191653_y8VfSkZqt.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655041634146'
           />
           
         </Head>
