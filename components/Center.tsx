@@ -68,7 +68,7 @@ const Center = () => {
               playlist?.name.length > 20
                 ? `lg:text-5xl md:text-5xl lg:leading-[75px]`
                 : `lg:text-8xl md:text-5xl lg:leading-[96px]`
-            } text-4xl playListTitle pt-1 mb-5 tracking-tighter `}
+            } text-4xl pt-1 mb-5 tracking-tighter `}
           >
             {playlist?.name.charAt(0).toUpperCase() + playlist?.name.slice(1)}
           </h1>
