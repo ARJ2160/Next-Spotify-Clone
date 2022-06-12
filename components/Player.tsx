@@ -1,7 +1,4 @@
-import {
-  HeartIcon,
-  VolumeUpIcon as VolumeDownIcon,
-} from '@heroicons/react/outline';
+import { VolumeUpIcon as VolumeDownIcon } from '@heroicons/react/outline';
 import {
   RewindIcon,
   SwitchHorizontalIcon,
@@ -31,7 +28,6 @@ const Player = () => {
   const fetchCurrentSong = async () => {
     if (!songInfo) {
       spotifyApi.getMyCurrentPlayingTrack().then((data) => {
-        console.log('Now Playing', data?.body?.item);
         setCurrentIdTrack(data.body?.item?.id as any);
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
           setIsPlaying(data.body?.is_playing);

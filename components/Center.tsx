@@ -1,4 +1,4 @@
-import { ChevronDownIcon, PencilIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon } from '@heroicons/react/outline';
 import { signOut, useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { shuffle } from 'lodash';
@@ -17,23 +17,6 @@ const colors = [
   'frmo-purple-500',
 ];
 
-interface playlistType {
-  collaborative?: boolean;
-  description?: string;
-  external_urls?: Object;
-  followers?: Object;
-  href?: string;
-  id?: string;
-  images?: [];
-  name?: string;
-  owner?: Object;
-  primary_color?: null;
-  public?: boolean;
-  snapshot_id?: string;
-  tracks?: Object;
-  type?: string;
-  uri?: string;
-}
 const Center = () => {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
@@ -53,7 +36,7 @@ const Center = () => {
       })
       .catch((err) => console.log(err));
   }, [spotifyApi, playlistId]);
-  console.log(playlist);
+
   return (
     <div className='flex flex-grow flex-col h-screen overflow-y-scroll scrollbar-hide'>
       <header className='absolute top-5 right-8'>
