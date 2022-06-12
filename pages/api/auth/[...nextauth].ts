@@ -36,7 +36,7 @@ export default NextAuth({
     signIn: '/login'
   },
   callbacks: {
-    async jwt({ token, account, user }) {
+    async jwt({ token, account, user }: any) {
       // Initial Sign In
       if (account && user) {
         return {
@@ -58,7 +58,7 @@ export default NextAuth({
         return await refreshAcessToken(token)
       }
     },
-    async session({ session, token }) {
+    async session({ session, token }: any) {
       session.user.accessToken = token.accessToken
       session.user.refreshToken = token.refreshToken
       session.user.username = token.username

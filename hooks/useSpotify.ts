@@ -8,7 +8,7 @@ const spotifyApi = new SpotifyWebApi({
 })
 
 const useSpotify = () => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession() as any;
   useEffect(() => {
     if (session) {
       if (session.error === 'RefreshAccessTokenError') {

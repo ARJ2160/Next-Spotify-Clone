@@ -26,13 +26,13 @@ const Player = () => {
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
   const [volume, setVolume] = useState(50);
-  const songInfo = useSongInfo();
+  const songInfo = useSongInfo() as any;
 
   const fetchCurrentSong = async () => {
     if (!songInfo) {
       spotifyApi.getMyCurrentPlayingTrack().then((data) => {
         console.log('Now Playing', data?.body?.item);
-        setCurrentIdTrack(data.body?.item?.id);
+        setCurrentIdTrack(data.body?.item?.id as any);
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
           setIsPlaying(data.body?.is_playing);
         });
