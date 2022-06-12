@@ -48,8 +48,8 @@ const Song = ({ order, track }: SongProps) => {
           alt=''
         />
         <div>
-          <p className='w-36 lg:w-64 text-white truncate'>{track.track.name}</p>
-          <p className='w-40'>{track.track.artists[0].name}</p>
+          <p className='w-36 lg:w-64 text-white truncate font-semibold'>{track.track.name}</p>
+          <p className='w-40 font-medium'>{track.track.artists[0].name}</p>
         </div>
       </div>
       <div className='flex items-center ml-auto justify-between md:ml-0 font-medium leading-4 text-sm tracking-normal'>

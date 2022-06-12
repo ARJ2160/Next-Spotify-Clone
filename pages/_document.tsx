@@ -1,19 +1,41 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
     return (
       <Html>
         <Head>
-          <link href="https://db.onlinewebfonts.com/c/01173b246d9d9ea808ea75a26b3b61bb?family=Circular+Spotify+Tx+T+Black" rel="stylesheet" type="text/css" />
+          <meta charSet='utf-8' />
+          <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
+          <meta itemProp='name' content='Spotify Clone' />
+          <meta name='author' content='Spotify Clone' />
+          <meta name='copyright' content='Spotify Clone' />
+          <meta name='robots' content='index, follow' />
+          <meta name='language' content='en-us' />
+          <meta property='og:type' content='website' />
+          <meta
+            property='og:url'
+            content='https://next-spotify-clone-xi.vercel.app'
+          />
+          <meta property='og:site_name' content='Spotify Clone' />
+          <meta property='og:title' content='Spotify Clone' />
+          <meta
+            property='og:image'
+            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_185937_OrcKkOKg-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655040613314'
+          />
+          <meta
+            property='og:image:url'
+            content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_185937_OrcKkOKg-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655040613314'
+          />
+          
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

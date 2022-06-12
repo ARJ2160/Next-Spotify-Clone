@@ -1,9 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://db.onlinewebfonts.com/c/01173b246d9d9ea808ea75a26b3b61bb?family=Circular+Spotify+Tx+T+Black');
-* {
-  font-family: 'Circular Spotify Tx T Black';
+.playTitle {
+  font-family: 'Circular Sp Dev Black Web';
   text-transform: none;
   letter-spacing: -0.04em;
   font-weight: 900;
@@ -12,4 +11,57 @@
   .button {
     @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
   }
+}
+
+/*
+ * Legal Disclaimer
+ *
+ * These web fonts are licensed exclusively for use on the following:
+ * spotify.com
+ *
+ * It is strictly forbidden to download or use these fonts on any other website domain or media.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2018
+ */
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+@font-face {
+  font-family: 'Circular Sp Dev Black Web';
+  src: url('fonts/Circular Sp Dev Web Black.woff') format('woff'),
+    url('fonts/Circular Sp Dev Web Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Circular Sp Dev Bold Web';
+  src: url('fonts/Circular Sp Dev Web Bold.woff') format('woff'),
+    url('fonts/Circular Sp Dev Web Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Circular Sp Dev Book Web';
+  src: url('fonts/Circular Sp Dev Web Book.woff') format('woff'),
+    url('fonts/Circular Sp Dev Web Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Circular Sp Dev Light Web';
+  src: url('fonts/Circular Sp Dev Web Light.woff') format('woff'),
+    url('fonts/Circular Sp Dev Web Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Circular Sp Dev Medium Web';
+  src: url('fonts/Circular Sp Dev Web Medium.woff') format('woff'),
+    url('fonts/Circular Sp Dev Web Medium.woff2') format('woff2');
 }

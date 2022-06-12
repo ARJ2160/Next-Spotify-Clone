@@ -17,6 +17,22 @@ import useSongInfo from '../hooks/useSongInfo';
 import useSpotify from '../hooks/useSpotify';
 
 const Player = () => {
+
+  const handleKeyPress = useCallback((event: any) => {
+    if (event.keyCode === 32) {
+      handlePlayPause();
+    }
+  }, []);
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener('keydown', handleKeyPress);
+    // remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
   const spotifyApi = useSpotify();
   const { data: session, status } = useSession();
   const [currentIdTrack, setCurrentIdTrack] =
