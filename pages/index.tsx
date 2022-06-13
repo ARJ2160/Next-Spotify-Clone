@@ -5,7 +5,7 @@ import Center from '../components/Center';
 import Player from '../components/Player';
 import Sidebar from '../components/Sidebar';
 import { useRouter } from 'next/router';
-import Library from './Library';
+import Library from './library';
 
 const Home: NextPage = () => {
   const router = useRouter();
