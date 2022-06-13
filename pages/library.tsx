@@ -8,7 +8,7 @@ import useSpotify from '../hooks/useSpotify';
 import Player from '../components/Player';
 import { useRouter } from 'next/router';
 
-const Library = () => {
+const library = () => {
   const spotifyApi = useSpotify();
   const router = useRouter();
   const { data: session, status } = useSession();
@@ -22,6 +22,11 @@ const Library = () => {
       });
     }
   }, [session, spotifyApi]);
+
+  const handlePlaylistClick = (id: string) => {
+    router.push('/');
+    setPlaylistId(id);
+  };
 
   return (
     <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library'>
@@ -66,7 +71,7 @@ const Library = () => {
           {playlists.map((playlist: any) => (
             <div
               key={playlist.id}
-              onClick={() => setPlaylistId(playlist.id)}
+              onClick={() => handlePlaylistClick(playlist.id)}
               className='h-60 w-56 mr-5 my-2 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
             >
               <img
@@ -89,4 +94,4 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default library;
