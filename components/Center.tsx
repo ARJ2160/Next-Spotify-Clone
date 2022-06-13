@@ -36,7 +36,7 @@ const Center = () => {
       })
       .catch((err) => console.log(err));
   }, [spotifyApi, playlistId]);
-  console.log(playlist)
+
   return (
     <div className='flex flex-grow flex-col h-screen overflow-y-scroll scrollbar-hide center'>
       <header className='absolute top-5 right-8'>

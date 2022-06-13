@@ -5,11 +5,21 @@ import Image from 'next/image';
 const Login = ({ providers }: any) => {
   return (
     <div className='bg-black flex items-center justify-center flex-col h-screen w-full'>
-      <img
-        className='w-52 mb-5'
-        src='https://links.papareact.com/9xl'
-        alt='Spotify'
-      />
+      <div
+        style={{
+          width: '15rem',
+          height: '15rem',
+          marginBottom: '1.25rem',
+          position: 'relative',
+        }}
+      >
+        <Image
+          src='https://links.papareact.com/9xl'
+          alt='Spotify'
+          layout='fill'
+          objectFit='contain'
+        />
+      </div>
       {Object.values(providers).map((provider: any) => (
         <div key={1}>
           <button

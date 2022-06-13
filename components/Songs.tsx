@@ -11,10 +11,10 @@ const Songs = () => {
       <div className='text-white px-8 grid grid-cols-3'>
         <div className='flex justify-start'>
           <HashtagIcon className='w-5 h-5 ml-4 mr-14' />
-          <p>Title</p>
+          <p className="ml-1">Title</p>
         </div>
         <div className='flex justify-center'>
-          <p className='ml-10 hidden md:block'>Album</p>
+          <p className='ml-12 hidden md:block'>Album</p>
         </div>
         <div className='flex justify-end'>
           <p className='mr-3'>Duration</p>

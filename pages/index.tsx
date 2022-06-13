@@ -4,8 +4,11 @@ import Head from 'next/head';
 import Center from '../components/Center';
 import Player from '../components/Player';
 import Sidebar from '../components/Sidebar';
+import { useRouter } from 'next/router';
+import Library from './Library';
 
 const Home: NextPage = () => {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -14,11 +17,10 @@ const Home: NextPage = () => {
       <div className='bg-black h-screen overflow-hidden'>
         <main className='flex'>
           <Sidebar />
-          <Center />
+          {router.pathname === '/' && <Center />}
+          {router.pathname === '/library' && <Library />}
         </main>
-        <div className='sticky bottom-0'>
-          <Player />
-        </div>
+        <Player />
       </div>
     </>
   );

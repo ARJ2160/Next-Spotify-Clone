@@ -11,6 +11,8 @@ import { useSession } from 'next-auth/react';
 import useSpotify from '../hooks/useSpotify';
 import { useRecoilState } from 'recoil';
 import { playlistIdState } from '../atoms/playlistAtoms';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Sidebar = () => {
   const spotifyApi = useSpotify();
@@ -18,6 +20,7 @@ const Sidebar = () => {
   const [playlists, setPlaylists] = useState([]);
   const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
 
+  const router = useRouter();
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
       spotifyApi.getUserPlaylists().then((data: any) => {
@@ -27,9 +30,12 @@ const Sidebar = () => {
   }, [session, spotifyApi]);
 
   return (
-    <div className='text-gray-500 p-5 lg:text-sm text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36'>
+    <div className='text-gray-500 p-5 lg:text-sm text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex mb-40'>
       <div className='space-y-4'>
-        <button className='flex items-center space-x-2 hover:text-white'>
+        <button
+          onClick={() => setPlaylistId('37i9dQZF1EVHGWrwldPRtj')}
+          className='flex items-center space-x-2 hover:text-white'
+        >
           <HomeIcon className='h-5 w-5' />
           <p>Home</p>
         </button>
@@ -37,7 +43,10 @@ const Sidebar = () => {
           <SearchIcon className='h-5 w-5' />
           <p>Search</p>
         </button>
-        <button className='flex items-center space-x-2 hover:text-white'>
+        <button
+          onClick={() => router.push('/library')}
+          className='flex items-center space-x-2 hover:text-white'
+        >
           <LibraryIcon className='h-5 w-5' />
           <p>Library</p>
         </button>

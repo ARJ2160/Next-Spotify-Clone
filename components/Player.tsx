@@ -85,7 +85,7 @@ const Player = () => {
   }, [handleKeyPress]);
 
   return (
-    <div className='h-24 bg-gradient-to-b from-black to-gray-900 text-white text-xs md:text-base grid grid-cols-3 px-2 md:px-8'>
+    <div className='h-24 bg-gradient-to-b from-black to-gray-900 text-white text-xs md:text-base grid grid-cols-3 px-2 md:px-8 sticky bottom-0'>
       <div className='flex items-center space-x-4'>
         <img
           className='hidden md:inline h-10 w-10'

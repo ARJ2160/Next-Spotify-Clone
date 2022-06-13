@@ -7,13 +7,20 @@
   letter-spacing: -0.04em;
   font-weight: 900;
 }
-.center{
+.center,
+.library {
   font-family: 'Circular Sp Dev Medium Web';
 }
 @layer components {
   .button {
     @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
   }
+  .libraryButton {
+    @apply cursor-pointer h-14 w-20 p-1 bg-[#333333] flex items-center justify-center rounded-lg ml-7;
+  }
+}
+.card {
+  background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
 }
 
 /*
