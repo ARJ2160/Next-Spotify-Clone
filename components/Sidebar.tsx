@@ -20,6 +20,7 @@ const Sidebar = () => {
   const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
 
   const router = useRouter();
+
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
       spotifyApi.getUserPlaylists().then((data: any) => {
@@ -32,7 +33,7 @@ const Sidebar = () => {
     <div className='text-gray-500 p-5 lg:text-sm text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex mb-40'>
       <div className='space-y-4'>
         <button
-          onClick={() => setPlaylistId('37i9dQZF1EVHGWrwldPRtj')}
+          onClick={() => router.push('/hero')}
           className='flex items-center space-x-2 hover:text-white'
         >
           <HomeIcon className='h-5 w-5' />

@@ -7,7 +7,10 @@
   letter-spacing: -0.04em;
   font-weight: 900;
 }
-.center,
+.center {
+  font-family: 'Circular Sp Dev Medium Web';
+  font-weight: 200 !important;
+}
 .library,
 .playback {
   font-family: 'Circular Sp Dev Medium Web';

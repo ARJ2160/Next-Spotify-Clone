@@ -50,7 +50,7 @@ const Song = ({ order, track }: SongProps) => {
             className={
               currentStateId === track.track.id
                 ? `text-green-500`
-                : `` + `w-36 lg:w-64 text-white truncate font-semibold`
+                : `` + `w-36 lg:w-64 text-white truncate`
             }
           >
             {track.track.name}
