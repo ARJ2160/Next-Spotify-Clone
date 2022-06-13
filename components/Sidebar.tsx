@@ -11,7 +11,6 @@ import { useSession } from 'next-auth/react';
 import useSpotify from '../hooks/useSpotify';
 import { useRecoilState } from 'recoil';
 import { playlistIdState } from '../atoms/playlistAtoms';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const Sidebar = () => {

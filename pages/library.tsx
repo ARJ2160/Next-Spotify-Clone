@@ -3,7 +3,7 @@ import { BookmarkIcon } from '@heroicons/react/solid';
 import { signOut, useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { playlistIdState, playlistState } from '../atoms/playlistAtoms';
+import { playlistIdState } from '../atoms/playlistAtoms';
 import useSpotify from '../hooks/useSpotify';
 import Player from '../components/Player';
 import { useRouter } from 'next/router';

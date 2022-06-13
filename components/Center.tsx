@@ -82,9 +82,9 @@ const Center = () => {
             />
             <p className='text-base'>
               {playlist?.owner.display_name === 'Spotify' ? (
-                <div>
+                <>
                   Made for <strong>XERXES</strong>
-                </div>
+                </>
               ) : (
                 playlist?.owner.display_name
               )}

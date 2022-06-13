@@ -8,7 +8,8 @@
   font-weight: 900;
 }
 .center,
-.library {
+.library,
+.playback {
   font-family: 'Circular Sp Dev Medium Web';
 }
 @layer components {
@@ -21,6 +22,22 @@
 }
 .card {
   background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
+}
+.tooltip::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  top: 101%;
+  left: 50%;
+}
+.tooltip {
+  @apply absolute bottom-10 right-1 w-auto p-2 min-w-max rounded-md shadow-md scale-0 transition-all duration-100 origin-bottom border-2 border-white;
 }
 
 /*

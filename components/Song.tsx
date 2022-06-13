@@ -4,7 +4,7 @@ import { currentTrackIdState, isPlayingState } from '../atoms/songAtom';
 import useSpotify from '../hooks/useSpotify';
 import { milliToMinutesAndSeconds } from '../lib/time';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 interface SongProps {
   order: number;
@@ -16,6 +16,7 @@ const Song = ({ order, track }: SongProps) => {
   const [currentStateId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+
   const playSong = () => {
     setCurrentTrackId(track.track.id);
     setIsPlaying(true);
@@ -33,11 +34,8 @@ const Song = ({ order, track }: SongProps) => {
     >
       <div className='flex items-center space-x-4'>
         <p>
-          {isMouseOver ? (
-            <FontAwesomeIcon
-              icon={faPlay}
-              className='text-white w-3 h-3'
-            />
+          {isMouseOver && isPlaying ? (
+            <FontAwesomeIcon icon={faPlay} className='text-white w-3 h-3' />
           ) : (
             order + 1
           )}
@@ -48,7 +46,15 @@ const Song = ({ order, track }: SongProps) => {
           alt=''
         />
         <div>
-          <p className='w-36 lg:w-64 text-white truncate font-semibold'>{track.track.name}</p>
+          <p
+            className={
+              currentStateId === track.track.id
+                ? `text-green-500`
+                : `` + `w-36 lg:w-64 text-white truncate font-semibold`
+            }
+          >
+            {track.track.name}
+          </p>
           <p className='w-40 font-medium'>{track.track.artists[0].name}</p>
         </div>
       </div>
