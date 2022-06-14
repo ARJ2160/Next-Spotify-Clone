@@ -1,4 +1,4 @@
-import { DeviceMobileIcon } from "@heroicons/react/outline";
+import { DeviceMobileIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import React from 'react';
 
@@ -12,7 +12,7 @@ interface myDeviceProps {
   volume_percent: number;
 }
 
-const PlaybackState = (myDevices: myDeviceProps) => {
+export const PlaybackState = (myDevices: myDeviceProps) => {
   return (
     <div className='playback flex flex-col justify-center items-center'>
       <div>Connect to a Device</div>
@@ -33,11 +33,9 @@ const PlaybackState = (myDevices: myDeviceProps) => {
       </div>
       <div>
         <div>
-          <DeviceMobileIcon className="w-10 h-10" />
-          </div>
+          <DeviceMobileIcon className='w-10 h-10' />
+        </div>
       </div>
     </div>
   );
 };
-
-export default PlaybackState;

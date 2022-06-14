@@ -17,16 +17,16 @@ import { currentTrackIdState, isPlayingState } from '../atoms/songAtom';
 import useSongInfo from '../hooks/useSongInfo';
 import useSpotify from '../hooks/useSpotify';
 
-const Player = () => {
+export const Player = () => {
   const spotifyApi = useSpotify();
   const { data: session, status } = useSession();
   const [currentIdTrack, setCurrentIdTrack] =
     useRecoilState(currentTrackIdState);
-    const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
-    const [volume, setVolume] = useState(100);
-    const songInfo = useSongInfo() as any;
-    const [isShuffle, setIsShuffle] = useState(false);
-    const [isRepeat, setIsRepeat] = useState(false);
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+  const [volume, setVolume] = useState(100);
+  const songInfo = useSongInfo() as any;
+  const [isShuffle, setIsShuffle] = useState(false);
+  const [isRepeat, setIsRepeat] = useState(false);
 
   const fetchCurrentSong = () => {
     spotifyApi.getMyCurrentPlayingTrack().then((data) => {
@@ -198,5 +198,3 @@ const Player = () => {
     </div>
   );
 };
-
-export default Player;

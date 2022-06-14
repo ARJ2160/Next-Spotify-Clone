@@ -3,14 +3,12 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet='utf-8' />
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
           <meta itemProp='name' content='Spotify Clone' />
-          <meta name='author' content='Spotify Clone' />
-          <meta name='copyright' content='Spotify Clone' />
-          <meta name='robots' content='index, follow' />
+          <meta name='author' content='ARJ' />
           <meta name='language' content='en-us' />
           <meta property='og:type' content='website' />
           <meta

@@ -5,7 +5,7 @@ import { shuffle } from 'lodash';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { playlistState, playlistIdState } from '../atoms/playlistAtoms';
 import useSpotify from '../hooks/useSpotify';
-import Songs from './Songs';
+import { Songs } from './index';
 
 const colors = [
   'from-indigo-500',
@@ -17,7 +17,7 @@ const colors = [
   'frmo-purple-500',
 ];
 
-const Center = () => {
+export const Center = () => {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [color, setColor] = useState(null);
@@ -106,5 +106,3 @@ const Center = () => {
     </div>
   );
 };
-
-export default Center;

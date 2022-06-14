@@ -10,7 +10,8 @@ interface SongProps {
   order: number;
   track: any;
 }
-const Song = ({ order, track }: SongProps) => {
+
+export const Song = ({ order, track }: SongProps) => {
   const spotifyApi = useSpotify();
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [currentStateId, setCurrentTrackId] =
@@ -67,5 +68,3 @@ const Song = ({ order, track }: SongProps) => {
     </div>
   );
 };
-
-export default Song;

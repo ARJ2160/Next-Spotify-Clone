@@ -13,13 +13,12 @@ import { useRecoilState } from 'recoil';
 import { playlistIdState } from '../atoms/playlistAtoms';
 import { useRouter } from 'next/router';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const spotifyApi = useSpotify();
+  const router = useRouter();
   const { data: session, status } = useSession();
   const [playlists, setPlaylists] = useState([]);
   const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
-
-  const router = useRouter();
 
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
@@ -77,5 +76,3 @@ const Sidebar = () => {
     </div>
   );
 };
-
-export default Sidebar;

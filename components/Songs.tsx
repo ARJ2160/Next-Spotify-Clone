@@ -2,16 +2,16 @@ import { HashtagIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { playlistState } from '../atoms/playlistAtoms';
-import Song from './Song';
+import { Song } from './index';
 
-const Songs = () => {
+export const Songs = () => {
   const playlist = useRecoilValue<any>(playlistState);
   return (
     <div>
       <div className='text-white px-8 grid grid-cols-3'>
         <div className='flex justify-start'>
           <HashtagIcon className='w-5 h-5 ml-4 mr-14' />
-          <p className="ml-1">Title</p>
+          <p className='ml-1'>Title</p>
         </div>
         <div className='flex justify-center'>
           <p className='ml-12 hidden md:block'>Album</p>
@@ -28,5 +28,3 @@ const Songs = () => {
     </div>
   );
 };
-
-export default Songs;

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { playlistIdState } from '../atoms/playlistAtoms';
 import useSpotify from '../hooks/useSpotify';
-import Player from '../components/Player';
+import { Player } from '../components/index';
 import { useRouter } from 'next/router';
 
 const library = () => {
