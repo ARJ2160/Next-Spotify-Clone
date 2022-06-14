@@ -28,7 +28,7 @@ export const Song = ({ order, track }: SongProps) => {
 
   return (
     <div
-      className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg'
+      className='grid grid-cols-2 text-[#B3B3B3] py-4 px-5 hover:bg-gray-900 rounded-lg'
       onClick={playSong}
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
