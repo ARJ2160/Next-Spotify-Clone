@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
           <meta charSet='utf-8' />
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
@@ -25,7 +25,6 @@ class MyDocument extends Document {
             property='og:image:url'
             content='https://ik.imagekit.io/36athv2v82c8/Screenshot_2022-06-12_191653_y8VfSkZqt.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655041634146'
           />
-          
         </Head>
         <body>
           <Main />

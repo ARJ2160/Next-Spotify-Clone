@@ -12,6 +12,7 @@ import useSpotify from '../hooks/useSpotify';
 import { useRecoilState } from 'recoil';
 import { playlistIdState } from '../atoms/playlistAtoms';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export const Sidebar = () => {
   const spotifyApi = useSpotify();
@@ -42,13 +43,12 @@ export const Sidebar = () => {
           <SearchIcon className='h-5 w-5' />
           <p>Search</p>
         </button>
-        <button
-          onClick={() => router.push('/library')}
-          className='flex items-center space-x-2 hover:text-white'
-        >
-          <LibraryIcon className='h-5 w-5' />
-          <p>Library</p>
-        </button>
+        <Link href='/library'>
+          <button className='flex items-center space-x-2 hover:text-white'>
+            <LibraryIcon className='h-5 w-5' />
+            <p>Library</p>
+          </button>
+        </Link>
         <hr className='border-t-[0.1px] border-gray-900' />
         <button className='flex items-center space-x-2 hover:text-white'>
           <PlusSmIcon className='h-5 w-5 rounded-sm text-black bg-white' />

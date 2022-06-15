@@ -7,6 +7,8 @@ import { playlistIdState } from '../atoms/playlistAtoms';
 import useSpotify from '../hooks/useSpotify';
 import { Player } from '../components/index';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const library = () => {
   const spotifyApi = useSpotify();
@@ -28,12 +30,13 @@ const library = () => {
     setPlaylistId(id);
   };
 
+  console.log(spotifyApi.getMySavedTracks().then((data) => console.log(data)));
   return (
     <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library'>
       <div className='flex justify-start items-center my-7'>
-        <button className='libraryButton' onClick={() => router.push('/')}>
-          Home
-        </button>
+        <div className='libraryButton'>
+          <Link href='/'>Home</Link>
+        </div>
         <button className='libraryButton' onClick={() => signOut()}>
           Logout
         </button>
@@ -41,11 +44,17 @@ const library = () => {
       <div className='flex flex-col flex-grow space-x-7'>
         <header className='absolute top-8 right-8'>
           <div className='flex items-center space-x-1 opacity-90 hover:opacity-70 cursor-pointer rounded-full pr-4'>
-            <img
-              className='rounded-full w-10 h-10 object-cover'
-              src={session?.user?.image || undefined}
-              alt=''
-            />
+            <div className='relative w-10 h-10'>
+              <Image
+                layout='fill'
+                className='rounded-full'
+                src={
+                  session?.user?.image ||
+                  'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
+                }
+                alt=''
+              />
+            </div>
             <span className='text-base'>{session?.user?.name}</span>
             <ChevronDownIcon className='h-5 w-5' />
           </div>
@@ -67,22 +76,25 @@ const library = () => {
             </div>
           </div>
         </div>
-        <div className='grid lg:grid-cols-5  md:grid-cols-3 grid-cols-2 gap-4 mt-10 cursor-pointer'>
+        <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4 mt-10 cursor-pointer'>
           {playlists.map((playlist: any) => (
             <div
               key={playlist.id}
               onClick={() => handlePlaylistClick(playlist.id)}
-              className='h-60 w-56 mr-5 my-2 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
+              className='h-60 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
             >
-              <img
-                className='w-36 h-36 rounded-sm'
-                src={playlist.images[0].url}
-                alt=''
-              />
+              <div className='relative w-36 h-36'>
+                <Image
+                  layout='fill'
+                  className='rounded-sm'
+                  src={playlist.images[0].url}
+                  alt=''
+                />
+              </div>
               <div className='flex flex-col items-center justify-start'>
                 <p className='w-36 truncate'>{playlist.name}</p>
                 <p className='w-36 truncate text-gray-500'>
-                  Made by {playlist.owner.display_name}
+                  By {playlist.owner.display_name}
                 </p>
               </div>
             </div>

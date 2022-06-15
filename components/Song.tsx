@@ -5,6 +5,7 @@ import useSpotify from '../hooks/useSpotify';
 import { milliToMinutesAndSeconds } from '../lib/time';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 interface SongProps {
   order: number;
@@ -35,17 +36,22 @@ export const Song = ({ order, track }: SongProps) => {
     >
       <div className='flex items-center space-x-4'>
         <p>
-          {isMouseOver && isPlaying ? (
+          {isMouseOver ? (
             <FontAwesomeIcon icon={faPlay} className='text-white w-3 h-3' />
           ) : (
             order + 1
           )}
         </p>
-        <img
-          className='h-10 w-10'
-          src={track.track.album.images[0].url}
-          alt=''
-        />
+        <div className='h-10 w-10 relative'>
+          <Image
+            layout='fill'
+            src={
+              track.track.album.images[0].url ||
+              'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
+            }
+            alt=''
+          />
+        </div>
         <div>
           <p
             className={

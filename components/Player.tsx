@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/solid';
 import { debounce } from 'lodash';
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { currentTrackIdState, isPlayingState } from '../atoms/songAtom';
@@ -134,11 +135,17 @@ export const Player = () => {
   return (
     <div className='h-24 bg-gradient-to-b from-black to-gray-900 text-white text-xs md:text-base grid grid-cols-3 px-2 md:px-8 sticky bottom-0'>
       <div className='flex items-center space-x-4'>
-        <img
-          className='hidden md:inline h-10 w-10'
-          src={songInfo?.album.images?.[0].url}
-          alt=''
-        />
+        <div className='relative h-10 w-10'>
+          <Image
+            layout='fill'
+            className='hidden md:inline'
+            src={
+              songInfo?.album.images?.[0].url ||
+              'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
+            }
+            alt=''
+          />
+        </div>
         <div>
           <h3 className=''>{songInfo?.name}</h3>
           <p className='text-gray-500 text-xs'>
