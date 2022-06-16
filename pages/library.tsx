@@ -34,9 +34,9 @@ const library = () => {
   return (
     <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library'>
       <div className='flex justify-start items-center my-7'>
-        <div className='libraryButton'>
-          <Link href='/'>Home</Link>
-        </div>
+        <Link href='/'>
+          <p className='libraryButton'>Home</p>
+        </Link>
         <button className='libraryButton' onClick={() => signOut()}>
           Logout
         </button>
