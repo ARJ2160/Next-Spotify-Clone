@@ -20,7 +20,6 @@ const hero = () => {
         setPlaylists(data.body.items);
       });
     }
-    console.log(recentlyPlayed);
   }, [session, spotifyApi]);
 
   return (
