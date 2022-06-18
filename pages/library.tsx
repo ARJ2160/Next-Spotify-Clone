@@ -30,11 +30,13 @@ const library = () => {
     setPlaylistId(id);
   };
 
-  console.log(spotifyApi.getMySavedTracks().then((data) => console.log(data)));
   return (
-    <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library'>
+    <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library pr-7'>
       <div className='flex justify-start items-center my-7'>
         <Link href='/'>
+          <p className='libraryButton'>Playlists</p>
+        </Link>
+        <Link href='/hero'>
           <p className='libraryButton'>Home</p>
         </Link>
         <button className='libraryButton' onClick={() => signOut()}>
@@ -43,11 +45,11 @@ const library = () => {
       </div>
       <div className='flex flex-col flex-grow space-x-7'>
         <header className='absolute top-8 right-8'>
-          <div className='flex items-center space-x-1 opacity-90 hover:opacity-70 cursor-pointer rounded-full pr-4'>
+          <div className='flex items-center opacity-90 hover:opacity-70 cursor-pointer rounded-full pr-4'>
             <div className='relative w-10 h-10'>
               <Image
                 layout='fill'
-                className='rounded-full'
+                className='rounded-full object-cover p-1'
                 src={
                   session?.user?.image ||
                   'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
@@ -60,13 +62,13 @@ const library = () => {
           </div>
         </header>
         <div className='ml-8 mb-10 text-4xl'>Playlists</div>
-        <div className='flex flex-col md:flex-row'>
+        <div className='grid grid-cols-5 gap-5'>
           <div className='justify-start'>
             <div className='card h-60 md:w-[20rem] w-4/5 rounded-md flex justify-center items-center'>
               <div className='text-3xl'>Liked Songs</div>
             </div>
           </div>
-          <div className='h-60 w-52 rounded-md flex flex-col md:mt-0 mt-10 justify-evenly items-center ml-0 md:ml-10 bg-[#181818]'>
+          <div className='h-60 rounded-md flex flex-col md:mt-0 mt-10 justify-evenly items-center ml-0 md:ml-10 bg-[#181818]'>
             <div className='bg-green-700 w-36 h-36 flex justify-center items-center rounded-md'>
               <BookmarkIcon className='w-20 h-20 text-[#1ED760]' />
             </div>
@@ -75,9 +77,33 @@ const library = () => {
               <p className='text-gray-500'>9 episodes</p>
             </div>
           </div>
+          <>
+            {playlists.slice(0, 3).map((playlist: any) => (
+              <div
+                key={playlist.id}
+                onClick={() => handlePlaylistClick(playlist.id)}
+                className='h-60 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
+              >
+                <div className='relative w-36 h-36'>
+                  <Image
+                    layout='fill'
+                    className='rounded-sm'
+                    src={playlist.images[0].url}
+                    alt=''
+                  />
+                </div>
+                <div className='flex flex-col items-center justify-start'>
+                  <p className='w-36 truncate'>{playlist.name}</p>
+                  <p className='w-36 truncate text-gray-500'>
+                    By {playlist.owner.display_name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </>
         </div>
-        <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4 mt-10 cursor-pointer'>
-          {playlists.map((playlist: any) => (
+        <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4 mt-5 cursor-pointer'>
+          {playlists.slice(3).map((playlist: any) => (
             <div
               key={playlist.id}
               onClick={() => handlePlaylistClick(playlist.id)}
