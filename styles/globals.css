@@ -44,7 +44,12 @@
 .tooltip {
   @apply absolute bottom-10 right-1 w-auto p-2 min-w-max rounded-md shadow-md scale-0 transition-all duration-100 origin-bottom border-2 border-white;
 }
-
+.playButton {
+  @apply absolute bottom-16 right-12 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
+}
+.libraryPlayButton {
+  @apply absolute bottom-20 right-16 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
+}
 /*
  * Legal Disclaimer
  *

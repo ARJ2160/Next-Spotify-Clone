@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import { BookmarkIcon } from '@heroicons/react/solid';
+import { BookmarkIcon, PlayIcon } from '@heroicons/react/solid';
 import { signOut, useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
@@ -82,7 +82,7 @@ const library = () => {
               <div
                 key={playlist.id}
                 onClick={() => handlePlaylistClick(playlist.id)}
-                className='h-60 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
+                className='group relative h-60 rounded-md flex flex-col justify-evenly cursor-pointer items-center bg-[#181818]'
               >
                 <div className='relative w-36 h-36'>
                   <Image
@@ -97,6 +97,7 @@ const library = () => {
                   <p className='w-36 truncate text-gray-500'>
                     By {playlist.owner.display_name}
                   </p>
+                  <PlayIcon className='group-hover:scale-100 libraryPlayButton text-green-500' />
                 </div>
               </div>
             ))}
@@ -107,7 +108,7 @@ const library = () => {
             <div
               key={playlist.id}
               onClick={() => handlePlaylistClick(playlist.id)}
-              className='h-60 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
+              className='group relative h-60 rounded-md flex flex-col justify-evenly items-center bg-[#181818]'
             >
               <div className='relative w-36 h-36'>
                 <Image
@@ -122,6 +123,7 @@ const library = () => {
                 <p className='w-36 truncate text-gray-500'>
                   By {playlist.owner.display_name}
                 </p>
+                <PlayIcon className='group-hover:scale-100 libraryPlayButton text-green-500' />
               </div>
             </div>
           ))}

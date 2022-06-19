@@ -140,14 +140,14 @@ export const Player = () => {
             layout='fill'
             className='hidden md:inline'
             src={
-              songInfo?.album.images?.[0].url ||
+              songInfo?.album?.images?.[0].url ||
               'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
             }
             alt=''
           />
         </div>
         <div>
-          <h3 className=''>{songInfo?.name}</h3>
+          <h3>{songInfo?.name}</h3>
           <p className='text-gray-500 text-xs'>
             {songInfo?.artists?.[0]?.name}
           </p>
