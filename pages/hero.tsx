@@ -47,7 +47,7 @@ const hero = () => {
   }, [session, spotifyApi]);
 
   return (
-    <div className='hero bg-black h-screen text-white overflow-y-scroll scrollbar-hide'>
+    <div className='hero bg-black h-screen text-white overflow-y-scroll'>
       <div className='px-7'>
         <header className='absolute top-8 z-10 right-8'>
           <div className='flex bg-black items-center opacity-90 hover:opacity-70 cursor-pointer rounded-full pr-4'>
@@ -94,7 +94,7 @@ const hero = () => {
                     alt=''
                   />
                 </div>
-                <p className='w-3/4 truncate ml-5'>{playlist.name}</p>
+                <p className='w-3/4 truncate ml-5 pr-4'>{playlist.name}</p>
               </div>
             ))}
         </div>
@@ -111,7 +111,7 @@ const hero = () => {
                   key={i}
                   className='h-52 flex flex-col relative group justify-evenly items-center bg-[#303030] rounded-md  cursor-pointer'
                 >
-                  <div className='relative w-36 h-36'>
+                  <div className='relative w-36 h-36 shadow-2xl'>
                     <Image
                       layout='fill'
                       className='rounded-sm'

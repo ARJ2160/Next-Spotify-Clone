@@ -30,7 +30,7 @@ export const Sidebar = () => {
   }, [session, spotifyApi]);
 
   return (
-    <div className='sidebar text-gray-500 p-5 lg:text-sm text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex mb-40'>
+    <div className='sidebar text-gray-500 p-5 lg:text-sm text-xs border-r border-gray-900 overflow-y-scroll h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex'>
       <div className='space-y-4'>
         <button
           onClick={() => router.push('/hero')}

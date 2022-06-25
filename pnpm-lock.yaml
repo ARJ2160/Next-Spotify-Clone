@@ -20,7 +20,6 @@ specifiers:
   react-dom: 18.1.0
   recoil: ^0.7.3
   spotify-web-api-node: ^5.0.2
-  tailwind-scrollbar-hide: ^1.1.7
   tailwindcss: ^3.0.24
   typescript: 4.7.2
 
@@ -37,7 +36,6 @@ dependencies:
   react-dom: 18.1.0_react@18.1.0
   recoil: 0.7.3_ef5jwxihqo6n7gxfmzogljlgcm
   spotify-web-api-node: 5.0.2
-  tailwind-scrollbar-hide: 1.1.7
 
 devDependencies:
   '@types/lodash': 4.14.182
@@ -1238,10 +1236,6 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
-
-  /tailwind-scrollbar-hide/1.1.7:
-    resolution: {integrity: sha512-X324n9OtpTmOMqEgDUEA/RgLrNfBF/jwJdctaPZDzB3mppxJk7TLIDmOreEDm1Bq4R9LSPu4Epf8VSdovNU+iA==}
-    dev: false
 
   /tailwindcss/3.1.1:
     resolution: {integrity: sha512-F5VFj5FiS4QZqdXPE6T6RJFqbsmISQ2KBUp9bOQyws9TleGToHsa54X8kwXwVdHMQhNeXOlxI47lrRICEVuOvg==}

@@ -42,7 +42,7 @@ export const Center = () => {
   }, [spotifyApi, playlistId]);
 
   return (
-    <div className='flex flex-grow flex-col h-screen overflow-y-scroll scrollbar-hide center'>
+    <div className='flex flex-grow flex-col h-screen overflow-y-scroll center pb-10'>
       <header className='absolute top-5 right-8'>
         <div
           className='flex items-center bg-black space-x-1 opacity-90 hover:opacity-80 cursor-pointer rounded-full pr-4'
@@ -82,7 +82,7 @@ export const Center = () => {
           <h1
             className={`${
               playlist?.name.length > 20
-                ? `lg:text-5xl md:text-5xl lg:leading-[75px]`
+                ? `lg:text-5xl md:text-4xl lg:leading-[75px]`
                 : `lg:text-8xl md:text-5xl lg:leading-[96px]`
             } text-4xl playTitle pt-1 mb-5 tracking-tighter `}
           >

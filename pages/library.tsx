@@ -31,7 +31,7 @@ const library = () => {
   };
 
   return (
-    <div className='h-screen overflow-y-scroll scrollbar-hide bg-black text-white library pr-7'>
+    <div className='h-screen overflow-y-scroll bg-black text-white library pr-7'>
       <div className='flex justify-start items-center my-7'>
         <Link href='/'>
           <p className='libraryButton'>Playlists</p>
@@ -62,13 +62,11 @@ const library = () => {
           </div>
         </header>
         <div className='ml-8 mb-10 text-4xl'>Playlists</div>
-        <div className='grid grid-cols-5 gap-5'>
-          <div className='justify-start'>
-            <div className='card h-60 md:w-[20rem] w-4/5 rounded-md flex justify-center items-center'>
-              <div className='text-3xl'>Liked Songs</div>
-            </div>
+        <div className='grid grid-cols-6 gap-5'>
+          <div className='card h-60 w-full row-span-2 col-span-2 rounded-md flex justify-center items-center'>
+            <div className='text-3xl'>Liked Songs</div>
           </div>
-          <div className='h-60 rounded-md flex flex-col md:mt-0 mt-10 justify-evenly items-center ml-0 md:ml-10 bg-[#181818]'>
+          <div className='h-60 rounded-md flex flex-col justify-evenly items-center ml-0 bg-[#181818]'>
             <div className='bg-green-700 w-36 h-36 flex justify-center items-center rounded-md'>
               <BookmarkIcon className='w-20 h-20 text-[#1ED760]' />
             </div>
@@ -82,7 +80,7 @@ const library = () => {
               <div
                 key={playlist.id}
                 onClick={() => handlePlaylistClick(playlist.id)}
-                className='group relative h-60 rounded-md flex flex-col justify-evenly cursor-pointer items-center bg-[#181818]'
+                className='group relative col-span-1 h-60 rounded-md flex flex-col justify-evenly cursor-pointer items-center bg-[#181818]'
               >
                 <div className='relative w-36 h-36'>
                   <Image
@@ -103,7 +101,7 @@ const library = () => {
             ))}
           </>
         </div>
-        <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4 mt-5 cursor-pointer'>
+        <div className='grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4 pb-10 cursor-pointer'>
           {playlists.slice(3).map((playlist: any) => (
             <div
               key={playlist.id}

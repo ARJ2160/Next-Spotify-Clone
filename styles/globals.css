@@ -1,55 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.playTitle {
-  font-family: 'Circular Sp Dev Black Web';
-  text-transform: none;
-  letter-spacing: -0.04em;
-  font-weight: 900;
-}
-.center,
-.sidebar {
-  font-family: 'Circular Sp Dev Medium Web';
-  font-weight: 200 !important;
-}
-.library,
-.playback,
-.hero {
-  font-family: 'Circular Sp Dev Medium Web';
-}
-@layer components {
-  .button {
-    @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
-  }
-  .libraryButton {
-    @apply cursor-pointer h-14 w-20 p-1 bg-[#333333] flex items-center justify-center rounded-lg ml-7;
-  }
-}
-.card {
-  background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
-}
-.tooltip::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-  top: 101%;
-  left: 50%;
-}
-.tooltip {
-  @apply absolute bottom-10 right-1 w-auto p-2 min-w-max rounded-md shadow-md scale-0 transition-all duration-100 origin-bottom border-2 border-white;
-}
-.playButton {
-  @apply absolute bottom-16 right-12 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
-}
-.libraryPlayButton {
-  @apply absolute bottom-20 right-16 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
-}
 /*
  * Legal Disclaimer
  *
@@ -101,4 +49,69 @@
   font-family: 'Circular Sp Dev Medium Web';
   src: url('fonts/Circular Sp Dev Web Medium.woff') format('woff'),
     url('fonts/Circular Sp Dev Web Medium.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.playTitle {
+  font-family: 'Circular Sp Dev Black Web';
+  text-transform: none;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.center,
+.sidebar {
+  font-family: 'Circular Sp Dev Medium Web';
+  font-weight: 200 !important;
+}
+.library,
+.playback,
+.hero {
+  font-family: 'Circular Sp Dev Medium Web';
+}
+@layer components {
+  .button {
+    @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
+  }
+  .libraryButton {
+    @apply cursor-pointer h-14 w-20 p-1 bg-[#333333] flex items-center justify-center rounded-lg ml-7;
+  }
+}
+.card {
+  background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
+}
+.tooltip::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  top: 101%;
+  left: 50%;
+}
+.tooltip {
+  @apply absolute bottom-10 right-1 w-auto p-2 min-w-max rounded-md shadow-md scale-0 transition-all duration-100 origin-bottom border-2 border-white;
+}
+.playButton {
+  @apply absolute bottom-16 right-12 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
+}
+.libraryPlayButton {
+  @apply absolute bottom-20 right-16 w-16 h-16 transition duration-100 ease-out scale-0 origin-bottom;
 }
