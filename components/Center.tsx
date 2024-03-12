@@ -42,62 +42,64 @@ export const Center = () => {
   }, [spotifyApi, playlistId]);
 
   return (
-    <div className='flex flex-grow flex-col h-screen overflow-y-scroll center pb-10'>
-      <header className='absolute top-5 right-8'>
+    <div className="flex flex-grow flex-col h-screen overflow-y-scroll center pb-10">
+      <header className="absolute top-5 right-8">
         <div
-          className='flex items-center bg-black space-x-1 opacity-90 hover:opacity-80 cursor-pointer rounded-full pr-4'
+          className="flex items-center bg-black space-x-1 opacity-90 hover:opacity-80 cursor-pointer rounded-full pr-4"
           onClick={() => signOut()}
         >
-          <div className='relative w-10 h-10'>
+          <div className="relative w-10 h-10">
             <Image
               src={
                 session?.user?.image ||
-                'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
+                "https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744"
               }
-              className='rounded-full object-cover p-1'
-              layout='fill'
-              alt=''
+              className="rounded-full object-cover p-1"
+              layout="fill"
+              alt=""
             />
           </div>
-          <span className='text-base text-white'>{session?.user?.name}</span>
-          <ChevronDownIcon className='text-white h-5 w-5' />
+          <span className="text-base text-white">{session?.user?.name}</span>
+          <ChevronDownIcon className="text-white h-5 w-5" />
         </div>
       </header>
       <section
         className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8 w-full`}
       >
-        <div className='relative h-52 w-52 '>
+        <div className="relative h-52 w-52 ">
           <Image
-            layout='fill'
+            layout="fill"
             src={
               playlist?.images?.[0]?.url ||
-              'https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744'
+              "https://ik.imagekit.io/36athv2v82c8/spotify_qV8MX8wFKBo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1637078191744"
             }
-            className='shadow-2xl'
-            alt=''
+            className="shadow-2xl"
+            alt=""
           />
         </div>
-        <div className='flex flex-col'>
+        <div className="flex flex-col">
           <p>{playlist?.type.toUpperCase()}</p>
           <h1
             className={`${
-              playlist?.name.length > 20
+              playlist?.name.length > 50
+                ? `lg:text-3xl md:text-4xl lg:leading-[75px]`
+                : playlist?.name.length > 30
                 ? `lg:text-5xl md:text-4xl lg:leading-[75px]`
                 : `lg:text-8xl md:text-5xl lg:leading-[96px]`
             } text-4xl playTitle pt-1 mb-5 tracking-tighter `}
           >
             {playlist?.name.charAt(0).toUpperCase() + playlist?.name.slice(1)}
           </h1>
-          <div className='flex items-center space-x-2 opacity-90 cursor-pointer p-1 pr-2'>
+          <div className="flex items-center space-x-2 opacity-90 cursor-pointer p-1 pr-2">
             <img
               className={`${
-                playlist?.owner.display_name === 'XERXES' ? '' : 'hidden'
+                playlist?.owner.display_name === "XERXES" ? "" : "hidden"
               } rounded-full w-8 h-8 object-cover`}
               src={session?.user?.image || undefined}
-              alt=''
+              alt=""
             />
-            <p className='text-base'>
-              {playlist?.owner.display_name === 'Spotify' ? (
+            <p className="text-base">
+              {playlist?.owner.display_name === "Spotify" ? (
                 <>
                   Made for <strong>XERXES</strong>
                 </>
